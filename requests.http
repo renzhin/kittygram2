@@ -16,22 +16,41 @@ POST http://127.0.0.1:8000/auth/jwt/create/
 Content-Type: application/json
 
 {
-    "username": "renzh",
-    "password": "1"
+    "username": "Vinni",
+    "password": "Qwerty@1"
 }
 
+###
+# Vinni пример GET запроса с JWT-токеном
+GET http://127.0.0.1:8000/auth/users/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NDQ2NTkwLCJqdGkiOiI2N2RmYjQ5MDVlNjc0YjUxYTQ5YThhZjJjMzVjMzZjNyIsInVzZXJfaWQiOjZ9.QvEq6HrIQ84k4pIeoD2thT_B3ZnBkvl5nYk4YkQbLJ8
 
-### Получение токена
+###
+# Petr Применение JWT - получение токена
 
-POST http://127.0.0.1:8000/api-token-auth/
+POST http://127.0.0.1:8000/auth/jwt/create/
 Content-Type: application/json
 
 {
-    "username": "renzhin",
-    "password": "1"
-} 
+    "username": "Petr",
+    "password": "Qwerty@1"
+}
 
 ###
+# Petr пример GET запроса с JWT-токеном
+GET http://127.0.0.1:8000/auth/users/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1NDQ2NzI4LCJqdGkiOiI0NTc4NmViZjcwYzk0ZTMyYjQ0ZDdiZWQ3ZGNlNzY3ZCIsInVzZXJfaWQiOjd9.jbhyDiaylenvtBUl4xA7CJuMR9GIK-xsZcpO4lw4UzY
+
+###
+# Применение JWT - получение токена
+
+POST http://127.0.0.1:8000/auth/jwt/create/
+Content-Type: application/json
+
+{
+    "username": "renzh",
+    "password": "Qwerty@1"
+}
 
 # пример GET запроса
 
@@ -39,14 +58,49 @@ GET http://127.0.0.1:8000/cats/
 
 ###
 #пример GET запроса с JWT-токеном
-GET http://127.0.0.1:8000/cats/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1MzY0OTMwLCJqdGkiOiI2M2MyZDk3YTJjNWU0ZDg5OWUzYjM5NjYxODFhYzZiOSIsInVzZXJfaWQiOjN9.9i0QyGjEmWwNKKR2v-2MxoBnL3a5VUD4rcBrIppos20
+GET http://127.0.0.1:8000/auth/users/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1Mzg4NjYxLCJqdGkiOiI2ZjUyNWNhYTcyNDE0NTIzYTkxN2I0ZDIxNjM1Y2M1YSIsInVzZXJfaWQiOjF9.47zrSX6J-wviv6jwz3S8VgsxAAciKBFVZl9YDk_7zqs
 
 ###
-#пример GET запроса с токеном
-GET http://127.0.0.1:8000/cats/
-Authorization: Token ac54823c56a67e1ae7f50af26fc3319e306bac84
+#пример создания пользователя
+POST http://127.0.0.1:8000/auth/users/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1Mzg4NjYxLCJqdGkiOiI2ZjUyNWNhYTcyNDE0NTIzYTkxN2I0ZDIxNjM1Y2M1YSIsInVzZXJfaWQiOjF9.47zrSX6J-wviv6jwz3S8VgsxAAciKBFVZl9YDk_7zqs
+Content-Type: application/json
 
+{
+    "email": "",
+    "username": "Petr",
+    "password": "Qwerty@1"
+} 
+
+###
+# #пример создания пользователя со всеми полями
+
+POST http://127.0.0.1:8000/auth/users/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1Mzg4NjYxLCJqdGkiOiI2ZjUyNWNhYTcyNDE0NTIzYTkxN2I0ZDIxNjM1Y2M1YSIsInVzZXJfaWQiOjF9.47zrSX6J-wviv6jwz3S8VgsxAAciKBFVZl9YDk_7zqs
+Content-Type: application/json
+
+{
+    "first_name": "Гога",
+    "last_name": "Пердежанский",
+    "username": "godzhi2",
+    "password": "Qwerty@1"
+}
+
+
+###
+# #пример создания пользователя со всеми полями
+
+POST http://127.0.0.1:8000/auth/users/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1Mzg4NjYxLCJqdGkiOiI2ZjUyNWNhYTcyNDE0NTIzYTkxN2I0ZDIxNjM1Y2M1YSIsInVzZXJfaWQiOjF9.47zrSX6J-wviv6jwz3S8VgsxAAciKBFVZl9YDk_7zqs
+Content-Type: application/json
+
+{
+    "first_name": "Винни",
+    "last_name": "Пердежанский",
+    "username": "Vinni",
+    "password": "Qwerty@1"
+}
 
 ###
 GET http://127.0.0.1:8000/cats/1/
@@ -54,11 +108,12 @@ GET http://127.0.0.1:8000/cats/1/
 ###
 
 POST http://127.0.0.1:8000/cats/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1Mzg4NjYxLCJqdGkiOiI2ZjUyNWNhYTcyNDE0NTIzYTkxN2I0ZDIxNjM1Y2M1YSIsInVzZXJfaWQiOjF9.47zrSX6J-wviv6jwz3S8VgsxAAciKBFVZl9YDk_7zqs
 Content-Type: application/json
 
 {
     "name": "Goga3",
-    "color": "Grey",
+    "color": "Gray",
     "birth_year": 2022,
     "owner": 1
 } 

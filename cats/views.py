@@ -14,6 +14,9 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class AchievementViewSet(viewsets.ModelViewSet):
     queryset = Achievement.objects.all()
